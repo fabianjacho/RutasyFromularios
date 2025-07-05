@@ -1,1 +1,33 @@
 <p>formulario-normal works!</p>
+<form (ngSubmit)="agregar()">
+    <label>
+        Nombre:
+        <input type="text"  [(ngModel)]="nombre" name="nombre"/>
+    </label>
+    <br>
+    <br>
+    <label>
+        Correo:
+        <input type="email" [(ngModel)]="correo" name="correo"/>
+    </label>
+    <br>
+    <br>
+    <button type="submit">Enviar</button>
+</form>
+
+<table border="1" style="margin-top: 20px;">
+    <thead>
+        <tr>
+            <th>Nombre</th>
+            <th>Correo</th>
+        </tr>
+    </thead>
+    <tbody>
+        @for(item of lista; track item) {
+            <tr>
+                <td>{{item.nombre}}</td>
+                <td>{{item.correo}}</td>
+            </tr>
+        }   
+    </tbody>    
+

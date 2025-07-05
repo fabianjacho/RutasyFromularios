@@ -1,1 +1,38 @@
 <p>formulario-reactivo works!</p>
+<form [formGroup]="perfilEmpleado" (ngSubmit)="agregar()">
+  <label>Nombre:
+    <input type="text" formControlName="nombre"  />
+  </label>
+  <br><br>
+  <label>Correo:
+    <input type="email" formControlName="correo"  />
+  </label>
+    <br><br>
+    <label>Edad:
+        <input type="number" formControlName="edad"  />
+    </label>
+<br><br>
+  <button type="submit">Enviar</button>
+
+</form>
+
+<table border="1" style="margin-top: 20px;">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Nombre</th>
+      <th>Correo</th>
+      <th>Edad</th>
+    </tr>
+  </thead>
+  <tbody>
+  @for (emp of listaempleados; track emp.id) {
+    <tr>
+      <td>{{ emp.id }}</td>
+      <td>{{ emp.nombre }}</td>
+      <td>{{ emp.correo }}</td>
+      <td>{{ emp.edad }}</td>
+    </tr>
+  }
+  </tbody>
+</table>

@@ -11,5 +11,16 @@ export class FormularioNormalComponent {
   nombre: string = '';
   correo: string = '';
 
+  lista:{nombre: string, correo: string}[] = [];
+
+  agregar() {
+    if (this.nombre && this.correo) {
+      this.lista.push({ nombre: this.nombre, correo: this.correo });
+      this.nombre = '';
+      this.correo = '';
+    } else {
+      alert('Por favor, complete todos los campos.');
+    }
+  } 
   
 }
