@@ -7,7 +7,20 @@ export const routes: Routes = [
      title: 'Formulario Normal',
      component: FormularioNormalComponent,   
     },
+
+  /*
     {path: 'formulario-reactivo',
      title: 'Formulario Reactivo', 
      component: FormularioReactivoComponent}
+  */
+
+    //formulario reactivo con lazy loading, esto es una promesa que se resuelve
+     {path: 'formulario-reactivo',
+        loadComponent() {
+            return import('./formulario-reactivo/formulario-reactivo.component')
+                .then(m => m.FormularioReactivoComponent);      
+        },
+     }
+
+
 ];
